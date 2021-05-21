@@ -22,7 +22,7 @@ Please always look only at one iteration at a time. The goal is to come up with 
 ### Feature Branches
 In the George Backend Chapter you have to work in feature branches for each task. As soon as you finish your task you will open up a pull request on GitHub which then will be reviewed at least by two of your colleagues. Therefore, think of solving an iteration as if you would solve a task for our team. Always focus on quality and come up with a codebase which you would be happy working in. Empathy in our team is highly valued. We always put ourselves into our reviewers position to improve their life reviewing our code.
 
-For each iteration, please create a branch with the following pattern: `firstname_lastname_iteration_nr_homeassignment`. Your first iteration must branch off `master`, or in case you want to use Kotlin, please branch of `kotlin_maven_baseline`. Your branches won't be merged back to master. Every new branch must branch of the previous branch.
+For each iteration, please create a branch with the following pattern: `firstname_lastname_iteration_nr_name`. Your first iteration must branch off `master`, or in case you want to use Kotlin, please branch of `kotlin_maven_baseline`. Your branches won't be merged back to master. Every new branch must branch of the previous branch. At the end of every branch, you have to add the first name of the person you are working with.
 
 ### Assumptions 
 In case the requirements are ambiguous, please write down your assumptions into the project's `assumptions.txt` file. Please always create a section for each iteration and put your assumptions under this section. The reason for this is, so that we can follow certain design decisions in your code which you came up with based on your assumptions.
