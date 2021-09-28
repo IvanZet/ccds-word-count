@@ -14,7 +14,7 @@ public class FooTest {
     @Test
     @DisplayName("Simple word count test")
     void testWordCount() {
-        assertEquals("Number of words: 4", foo.findWordCount("mytext.txt"),
+        assertEquals("Number of words: 4", foo.convertTextToList("Mary had a little lamb"),
                 "Regular word count should work");
     }
 }
