@@ -5,7 +5,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter text: ");
         String text = scan.nextLine();
-        Foo foo = new Foo();
-        System.out.println(foo.convertTextToList(text));
+        System.out.println(new Foo().convertTextToList(text));
     }
 }

@@ -1,5 +1,5 @@
-import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Foo {
@@ -9,29 +9,7 @@ public class Foo {
         for (String word : text.split(" ")) {
             wordArrayList.add(word);
         }
-        removeStopWordsFromList(wordArrayList);
+        wordArrayList.removeAll(Arrays.asList("", null));
         return "Number of words: " + wordArrayList.size();
-    }
-
-    void removeStopWordsFromList(List<String> list) {
-        String fileName = "stopwords.txt";
-        BufferedReader br;
-        String line = "";
-
-        try {
-            br = new BufferedReader(new FileReader(fileName));
-            try {
-                while((line = br.readLine()) != null) {
-                    if (list.contains(line)) {
-                        list.remove(line);
-                    }
-                }
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 }
