@@ -56,4 +56,15 @@ class WordCountTest {
         assertEquals(3, tested.countWords("adsaf dsafsdf a"));
     }
 
+
+    @Test
+    void countWordsIncorrectChars1() {
+        assertEquals(1, tested.countWords("ad21saf,dsafsdf a"));
+    }
+
+    @Test
+    void countWordsIncorrectChars2() {
+        assertEquals(0, tested.countWords("ad21saf,-#$%dsafsdf"));
+    }
+
 }
