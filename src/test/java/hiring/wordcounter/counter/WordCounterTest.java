@@ -1,6 +1,5 @@
 package hiring.wordcounter.counter;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -20,7 +19,10 @@ class WordCounterTest {
     private static Stream<Arguments> provideCount() {
         return Stream.of(
                 Arguments.of("hello", 1),
-                Arguments.of("hello world", 2)
+                Arguments.of("hello world", 2),
+                Arguments.of("hello w1rld", 1),
+                Arguments.of("hello w1rld 3", 1),
+                Arguments.of("hello w1rld #", 1)
         );
     }
 }
