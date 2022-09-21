@@ -1,0 +1,4 @@
+#Assumptions
+
+1. Word candidates are separated with spaces
+2. A word candidate containing a number should not be counted
