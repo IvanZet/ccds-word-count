@@ -1,5 +1,5 @@
 package hiring.wordcounter.main;
 
-public interface Reader {
+public interface InputReader {
     String read();
 }

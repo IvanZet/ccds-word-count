@@ -9,7 +9,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InputReaderTest {
+class InputInputReaderImplTest {
 
     private static ByteArrayOutputStream outContent;
 
@@ -22,14 +22,14 @@ class InputReaderTest {
 
     @Test
     void read_consoleInput_returnText() {
-        InputReader inputReader = new InputReader();
+        InputInputReaderImpl inputReaderImpl = new InputInputReaderImpl();
 
         // Mock input
         String input = "a";
         ByteArrayInputStream inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
 
-        assertEquals(input, inputReader.read());
+        assertEquals(input, inputReaderImpl.read());
         assertTrue(outContent.toString().contains("Enter text:"));
     }
 }

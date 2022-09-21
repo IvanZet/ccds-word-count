@@ -13,7 +13,11 @@ class WordCounterTest {
     @MethodSource("provideCount")
     void count(String text, int count) {
         WordCounter wordCounter = new WordCounter();
-        assertEquals(count, wordCounter.count(text));
+        String stopwords = "the" + System.lineSeparator() +
+                "a" + System.lineSeparator() +
+                "on" + System.lineSeparator() +
+                "off";
+        assertEquals(count, wordCounter.count(text, stopwords));
     }
 
     private static Stream<Arguments> provideCount() {
@@ -22,7 +26,8 @@ class WordCounterTest {
                 Arguments.of("hello world", 2),
                 Arguments.of("hello w1rld", 1),
                 Arguments.of("hello w1rld 3", 1),
-                Arguments.of("hello w1rld #", 1)
+                Arguments.of("hello w1rld #", 1),
+                Arguments.of("hello a the on off", 1)
         );
     }
 }

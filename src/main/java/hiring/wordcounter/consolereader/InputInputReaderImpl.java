@@ -1,10 +1,10 @@
 package hiring.wordcounter.consolereader;
 
-import hiring.wordcounter.main.Reader;
+import hiring.wordcounter.main.InputReader;
 
 import java.util.Scanner;
 
-public class InputReader implements Reader {
+public class InputInputReaderImpl implements InputReader {
     @Override
     public String read() {
         try (Scanner scanner = new Scanner(System.in)) {
