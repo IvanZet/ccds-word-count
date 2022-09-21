@@ -1,6 +1,6 @@
 package hiring.wordcounter.counter;
 
-import hiring.wordcounter.reader.Counter;
+import hiring.wordcounter.main.Counter;
 
 import java.util.regex.Pattern;
 

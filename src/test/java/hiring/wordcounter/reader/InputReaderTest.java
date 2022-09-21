@@ -24,8 +24,7 @@ class InputReaderTest {
 
     @Test
     void read_consoleInput_returnText() {
-        Counter counter = new WordCounter();
-        InputReader inputReader = new InputReader(counter);
+        InputReader inputReader = new InputReader();
 
         // Mock input
         String input = "a";
