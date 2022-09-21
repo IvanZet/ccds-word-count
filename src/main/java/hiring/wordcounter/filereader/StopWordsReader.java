@@ -11,8 +11,13 @@ import java.nio.file.Paths;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FileReaderImpl implements FileReader {
+public class StopWordsReader implements FileReader {
 
+    /**
+     * Reads stop words from a file in the source
+     *
+     * @return  string with all the stop words
+     */
     @Override
     public String read() {
         String words = "";

@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FileReaderImplTest {
+class StopWordsReaderTest {
 
     @Test
     void read_fileWithwords_checkContent() {
-        FileReader fileReader = new FileReaderImpl();
+        FileReader fileReader = new StopWordsReader();
 
         String expected = "the" + System.lineSeparator() +
                 "a" + System.lineSeparator() +
