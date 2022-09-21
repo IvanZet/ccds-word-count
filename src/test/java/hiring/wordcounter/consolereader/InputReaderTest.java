@@ -1,12 +1,10 @@
-package hiring.wordcounter.reader;
+package hiring.wordcounter.consolereader;
 
-import hiring.wordcounter.counter.WordCounter;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;

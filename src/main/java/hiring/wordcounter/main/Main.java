@@ -1,7 +1,7 @@
 package hiring.wordcounter.main;
 
 import hiring.wordcounter.counter.WordCounter;
-import hiring.wordcounter.reader.InputReader;
+import hiring.wordcounter.consolereader.InputReader;
 import hiring.wordcounter.writer.ConsoleWriter;
 
 public class Main {

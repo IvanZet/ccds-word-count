@@ -1,4 +1,4 @@
-package hiring.wordcounter.reader;
+package hiring.wordcounter.consolereader;
 
 import hiring.wordcounter.main.Reader;
 
