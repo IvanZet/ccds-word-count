@@ -1,0 +1,1 @@
+Assumption: Assumed only dictionary alphabetic words are used as input.
