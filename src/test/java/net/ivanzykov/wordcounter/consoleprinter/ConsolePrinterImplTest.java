@@ -1,6 +1,6 @@
-package hiring.wordcounter.writer;
+package net.ivanzykov.wordcounter.consoleprinter;
 
-import hiring.wordcounter.main.Writer;
+import net.ivanzykov.wordcounter.main.ConsolePrinter;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -8,7 +8,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ConsoleWriterTest {
+class ConsolePrinterImplTest {
 
     @Test
     void write() {
@@ -16,9 +16,9 @@ class ConsoleWriterTest {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
-        Writer writer = new ConsoleWriter();
+        ConsolePrinter consolePrinter = new ConsolePrinterImpl();
         String text = "a 2";
-        writer.write(text);
+        consolePrinter.write(text);
 
         assertTrue(outContent.toString().contains(text));
     }

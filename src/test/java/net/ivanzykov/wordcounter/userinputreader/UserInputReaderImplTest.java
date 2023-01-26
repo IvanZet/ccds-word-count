@@ -1,4 +1,4 @@
-package hiring.wordcounter.consolereader;
+package net.ivanzykov.wordcounter.userinputreader;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InputInputReaderImplTest {
+class UserInputReaderImplTest {
 
     private static ByteArrayOutputStream outContent;
 
@@ -22,7 +22,7 @@ class InputInputReaderImplTest {
 
     @Test
     void read_consoleInput_returnText() {
-        InputInputReaderImpl inputReaderImpl = new InputInputReaderImpl();
+        UserInputReaderImpl inputReaderImpl = new UserInputReaderImpl();
 
         // Mock input
         String input = "a";

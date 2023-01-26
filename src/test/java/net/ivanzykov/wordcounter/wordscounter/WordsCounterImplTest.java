@@ -1,4 +1,4 @@
-package hiring.wordcounter.counter;
+package net.ivanzykov.wordcounter.wordscounter;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -8,11 +8,11 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WordCounterTest {
+class WordsCounterImplTest {
     @ParameterizedTest
     @MethodSource("provideCount")
     void count(String text, int count) {
-        WordCounter wordCounter = new WordCounter();
+        WordsCounterImpl wordCounter = new WordsCounterImpl();
         String stopwords = "the" + System.lineSeparator() +
                 "a" + System.lineSeparator() +
                 "on" + System.lineSeparator() +

@@ -1,10 +1,10 @@
-package hiring.wordcounter.counter;
+package net.ivanzykov.wordcounter.wordscounter;
 
-import hiring.wordcounter.main.Counter;
+import net.ivanzykov.wordcounter.main.WordsCounter;
 
 import java.util.regex.Pattern;
 
-public class WordCounter implements Counter {
+public class WordsCounterImpl implements WordsCounter {
 
     /**
      * Counts words in the provided text considering provided stop words

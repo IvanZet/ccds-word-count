@@ -1,6 +1,6 @@
-package hiring.wordcounter.filereader;
+package net.ivanzykov.wordcounter.stopwordsreader;
 
-import hiring.wordcounter.main.FileReader;
+import net.ivanzykov.wordcounter.main.StopWordsReader;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StopWordsReader implements FileReader {
+public class StopWordsReaderImpl implements StopWordsReader {
 
     /**
      * Reads stop words from a file in the source
@@ -28,6 +28,7 @@ public class StopWordsReader implements FileReader {
             if (url != null) {
                 path = Paths.get(url.toURI());
             } else {
+                // TODO: use ConsoleWriter
                 System.out.println("Error reading the word file");
                 System.exit(-1);
             }

@@ -1,20 +1,20 @@
-package hiring.wordcounter.filereader;
+package net.ivanzykov.wordcounter.stopwordsreader;
 
-import hiring.wordcounter.main.FileReader;
+import net.ivanzykov.wordcounter.main.StopWordsReader;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StopWordsReaderTest {
+class StopWordsReaderImplTest {
 
     @Test
     void read_fileWithwords_checkContent() {
-        FileReader fileReader = new StopWordsReader();
+        StopWordsReader stopWordsReader = new StopWordsReaderImpl();
 
         String expected = "the" + System.lineSeparator() +
                 "a" + System.lineSeparator() +
                 "on" + System.lineSeparator() +
                 "off";
-        assertEquals(expected, fileReader.read());
+        assertEquals(expected, stopWordsReader.read());
     }
 }
