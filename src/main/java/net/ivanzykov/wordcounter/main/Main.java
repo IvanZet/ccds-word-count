@@ -37,15 +37,27 @@ public class Main {
     public void run() {
         printToConsole("Enter text: ");
 
-        String usersInput = userInputReader.read();
+        String usersInput = readUsersInput();
 
         printToConsole("Number of words: ");
 
-        printToConsole((wordsCounter.count(usersInput, stopWordsReader.read())));
+        printToConsole(countWords(usersInput, readStopWords()));
     }
 
     private <T> void printToConsole(T text) {
         consolePrinter.print(text);
+    }
+
+    private String readUsersInput() {
+        return userInputReader.read();
+    }
+
+    private String readStopWords() {
+        return stopWordsReader.read();
+    }
+
+    private int countWords(String usersInput, String stopWords) {
+        return wordsCounter.count(usersInput, stopWords);
     }
 
     public static void main(final String[] args) {
