@@ -30,6 +30,5 @@ class UserInputReaderImplTest {
         System.setIn(inContent);
 
         assertEquals(input, inputReaderImpl.read());
-        assertTrue(outContent.toString().contains("Enter text:"));
     }
 }

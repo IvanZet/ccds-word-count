@@ -36,7 +36,17 @@ public class Main {
      */
     public void run() {
         // TODO: move conversion of result of wordsCounter.count() to WordsCounter
-        consolePrinter.write(String.valueOf(wordsCounter.count(userInputReader.read(), stopWordsReader.read())));
+        printToConsole("Enter text: ");
+
+        String usersInput = userInputReader.read();
+
+        printToConsole("Number of words: ");
+
+        printToConsole(String.valueOf(wordsCounter.count(usersInput, stopWordsReader.read())));
+    }
+
+    private void printToConsole(String text) {
+        consolePrinter.print(text);
     }
 
     public static void main(final String[] args) {

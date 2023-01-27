@@ -14,9 +14,6 @@ public class UserInputReaderImpl implements UserInputReader {
     @Override
     public String read() {
         try (Scanner scanner = new Scanner(System.in)) {
-            // FIXME: better move it to other class
-            System.out.println("Enter text:");
-
             return scanner.nextLine();
         }
     }
