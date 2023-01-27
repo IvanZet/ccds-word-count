@@ -10,7 +10,7 @@ public class ConsolePrinterImpl implements ConsolePrinter {
      * @param text  string which is printed to the console
      */
     @Override
-    public void write(String text) {
-        System.out.println(text);
+    public void print(String text) {
+        System.out.print(text);
     }
 }

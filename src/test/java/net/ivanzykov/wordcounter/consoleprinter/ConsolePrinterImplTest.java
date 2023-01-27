@@ -18,7 +18,7 @@ class ConsolePrinterImplTest {
 
         ConsolePrinter consolePrinter = new ConsolePrinterImpl();
         String text = "a 2";
-        consolePrinter.write(text);
+        consolePrinter.print(text);
 
         assertTrue(outContent.toString().contains(text));
     }
