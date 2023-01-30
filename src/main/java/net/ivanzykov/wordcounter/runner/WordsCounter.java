@@ -1,4 +1,4 @@
-package net.ivanzykov.wordcounter.main;
+package net.ivanzykov.wordcounter.runner;
 
 /**
  * For classes counting words

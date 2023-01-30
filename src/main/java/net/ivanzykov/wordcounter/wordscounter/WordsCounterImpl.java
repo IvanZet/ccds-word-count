@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.wordscounter;
 
-import net.ivanzykov.wordcounter.main.WordsCounter;
+import net.ivanzykov.wordcounter.runner.WordsCounter;
 
 import java.util.regex.Pattern;
 

@@ -1,14 +1,9 @@
-package net.ivanzykov.wordcounter.main;
-
-import net.ivanzykov.wordcounter.wordscounter.WordsCounterImpl;
-import net.ivanzykov.wordcounter.userinputreader.UserInputReaderImpl;
-import net.ivanzykov.wordcounter.stopwordsreader.StopWordsReaderImpl;
-import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
+package net.ivanzykov.wordcounter.runner;
 
 /**
- * The main class stat instantiates all dependencies and runs the app
+ * Controls execution flow of the app.
  */
-public class Main {
+public class Runner {
 
     private final WordsCounter wordsCounter;
     private final UserInputReader userInputReader;
@@ -23,17 +18,14 @@ public class Main {
      * @param consolePrinter    consolePrinter object that prints to the console
      * @param stopWordsReader   stopWordsReader object that reads stop words from a file
      */
-    public Main (WordsCounter wordsCounter, UserInputReader userInputReader, ConsolePrinter consolePrinter,
-                 StopWordsReader stopWordsReader) {
+    public Runner(WordsCounter wordsCounter, UserInputReader userInputReader, ConsolePrinter consolePrinter,
+                  StopWordsReader stopWordsReader) {
         this.wordsCounter = wordsCounter;
         this.userInputReader = userInputReader;
         this.consolePrinter = consolePrinter;
         this.stopWordsReader = stopWordsReader;
     }
 
-    /**
-     * Starts this app
-     */
     public void run() {
         printToConsole("Enter text: ");
 
@@ -58,14 +50,5 @@ public class Main {
 
     private int countWords(String usersInput, String stopWords) {
         return wordsCounter.count(usersInput, stopWords);
-    }
-
-    public static void main(final String[] args) {
-        WordsCounter wordsCounter = new WordsCounterImpl();
-        UserInputReader userInputReader = new UserInputReaderImpl();
-        ConsolePrinter consolePrinter = new ConsolePrinterImpl();
-        StopWordsReader stopWordsReader = new StopWordsReaderImpl();
-
-        new Main(wordsCounter, userInputReader, consolePrinter, stopWordsReader).run();
     }
 }

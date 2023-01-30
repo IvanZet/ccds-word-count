@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.consoleprinter;
 
-import net.ivanzykov.wordcounter.main.ConsolePrinter;
+import net.ivanzykov.wordcounter.runner.ConsolePrinter;
 
 public class ConsolePrinterImpl implements ConsolePrinter {
 

@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.consoleprinter;
 
-import net.ivanzykov.wordcounter.main.ConsolePrinter;
+import net.ivanzykov.wordcounter.runner.ConsolePrinter;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;

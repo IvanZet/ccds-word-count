@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.userinputreader;
 
-import net.ivanzykov.wordcounter.main.UserInputReader;
+import net.ivanzykov.wordcounter.runner.UserInputReader;
 
 import java.util.Scanner;
 
