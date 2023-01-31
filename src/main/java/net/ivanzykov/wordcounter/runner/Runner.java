@@ -12,6 +12,8 @@ public class Runner {
     private final StopWordsReader stopWordsReader;
     private final ConsolePrinter consolePrinter;
 
+    private static final String STOP_WORDS_FILENAME = "stopwords.txt";
+
     /**
      * Constructor for this class
      *
@@ -55,7 +57,7 @@ public class Runner {
     }
 
     private List<String> readStopWords() {
-        return stopWordsReader.read();
+        return stopWordsReader.read(STOP_WORDS_FILENAME);
     }
 
     private int countWords(String usersInput, List<String> stopWords) {

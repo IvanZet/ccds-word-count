@@ -14,6 +14,6 @@ class StopWordsReaderImplTest {
     void read_fileWithWords_checkContent() {
         StopWordsReader stopWordsReader = new StopWordsReaderImpl();
         List<String> expected = Arrays.asList("the", "a", "on", "off");
-        assertEquals(expected, stopWordsReader.read());
+        assertEquals(expected, stopWordsReader.read("stopwords.txt"));
     }
 }

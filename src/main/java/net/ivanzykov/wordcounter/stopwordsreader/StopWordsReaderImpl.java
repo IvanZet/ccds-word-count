@@ -16,16 +16,16 @@ import java.util.stream.Stream;
 public class StopWordsReaderImpl implements StopWordsReader {
 
     /**
-     * Reads stop words from stopwords.txt file in the source
+     * Reads stop words from the file (in the source) with the provided name
      *
      * @return  list with strings of all the stop words
      */
     @Override
-    public List<String> read() {
+    public List<String> read(String fileName) {
         List<String> words;
         try {
             Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader()
-                    .getResource("stopwords.txt")).toURI());
+                    .getResource(fileName)).toURI());
             try (Stream<String> lines = Files.lines(path)) {
                 words = lines.collect(Collectors.toList());
             }
