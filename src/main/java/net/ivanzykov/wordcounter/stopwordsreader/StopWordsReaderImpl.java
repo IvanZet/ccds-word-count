@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -17,16 +18,16 @@ public class StopWordsReaderImpl implements StopWordsReader {
     /**
      * Reads stop words from stopwords.txt file in the source
      *
-     * @return  string with all the stop words
+     * @return  list with strings of all the stop words
      */
     @Override
-    public String read() {
-        String words;
+    public List<String> read() {
+        List<String> words;
         try {
             Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader()
                     .getResource("stopwords.txt")).toURI());
             try (Stream<String> lines = Files.lines(path)) {
-                words = lines.collect(Collectors.joining(System.lineSeparator()));
+                words = lines.collect(Collectors.toList());
             }
         } catch (NullPointerException e) {
             throw new StopWordsReaderException("File with stop words not found.");

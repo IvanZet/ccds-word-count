@@ -4,6 +4,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,11 +15,8 @@ class WordsCounterImplTest {
     @MethodSource("provideCount")
     void count(String text, int count) {
         WordsCounterImpl wordCounter = new WordsCounterImpl();
-        String stopwords = "the" + System.lineSeparator() +
-                "a" + System.lineSeparator() +
-                "on" + System.lineSeparator() +
-                "off";
-        assertEquals(count, wordCounter.count(text, stopwords));
+        List<String> stopWords = Arrays.asList("the", "a", "on", "off");
+        assertEquals(count, wordCounter.count(text, stopWords));
     }
 
     private static Stream<Arguments> provideCount() {

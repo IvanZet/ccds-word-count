@@ -3,18 +3,17 @@ package net.ivanzykov.wordcounter.stopwordsreader;
 import net.ivanzykov.wordcounter.runner.StopWordsReader;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StopWordsReaderImplTest {
 
     @Test
-    void read_fileWithwords_checkContent() {
+    void read_fileWithWords_checkContent() {
         StopWordsReader stopWordsReader = new StopWordsReaderImpl();
-
-        String expected = "the" + System.lineSeparator() +
-                "a" + System.lineSeparator() +
-                "on" + System.lineSeparator() +
-                "off";
+        List<String> expected = Arrays.asList("the", "a", "on", "off");
         assertEquals(expected, stopWordsReader.read());
     }
 }

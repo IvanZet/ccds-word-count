@@ -1,5 +1,7 @@
 package net.ivanzykov.wordcounter.runner;
 
+import java.util.List;
+
 /**
  * Controls execution flow of the app.
  */
@@ -31,7 +33,7 @@ public class Runner {
 
         String usersInput = readUsersInput();
 
-        String stopWords = "";
+        List<String> stopWords = null;
         try {
             stopWords = readStopWords();
         } catch (StopWordsReaderException e) {
@@ -52,11 +54,11 @@ public class Runner {
         return userInputReader.read();
     }
 
-    private String readStopWords() {
+    private List<String> readStopWords() {
         return stopWordsReader.read();
     }
 
-    private int countWords(String usersInput, String stopWords) {
+    private int countWords(String usersInput, List<String> stopWords) {
         return wordsCounter.count(usersInput, stopWords);
     }
 }
