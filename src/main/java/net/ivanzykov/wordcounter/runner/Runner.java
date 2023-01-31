@@ -31,9 +31,17 @@ public class Runner {
 
         String usersInput = readUsersInput();
 
+        String stopWords = "";
+        try {
+            stopWords = readStopWords();
+        } catch (StopWordsReaderException e) {
+            printToConsole(e.getLocalizedMessage());
+            System.exit(-1);
+        }
+
         printToConsole("Number of words: ");
 
-        printToConsole(countWords(usersInput, readStopWords()));
+        printToConsole(countWords(usersInput, stopWords));
     }
 
     private <T> void printToConsole(T text) {
