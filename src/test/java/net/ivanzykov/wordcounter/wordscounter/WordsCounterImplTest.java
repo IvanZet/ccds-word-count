@@ -24,7 +24,7 @@ class WordsCounterImplTest {
 
         // Instantiate SUT
         WordsCounterImpl wordCounter = new WordsCounterImpl(
-                new UserInputReaderImpl(), WordCounterApp.STOP_WORDS_FILENAME, new StopWordsReaderImpl());
+                new UserInputReaderImpl(), new StopWordsReaderImpl(WordCounterApp.STOP_WORDS_FILENAME));
 
         assertEquals(count, wordCounter.count());
 

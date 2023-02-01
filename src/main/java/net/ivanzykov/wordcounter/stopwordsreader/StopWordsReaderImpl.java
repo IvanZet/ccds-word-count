@@ -15,13 +15,24 @@ import java.util.stream.Stream;
 
 public class StopWordsReaderImpl implements StopWordsReader {
 
+    private final String fileName;
+
     /**
-     * Reads stop words from the file (in the source) with the provided name
+     * Constructor for this class.
+     *
+     * @param fileName  string with the name of the file with stop words
+     */
+    public StopWordsReaderImpl(String fileName) {
+        this.fileName = fileName;
+    }
+
+    /**
+     * Reads stop words from the file in the source
      *
      * @return  list with strings of all the stop words
      */
     @Override
-    public List<String> read(String fileName) {
+    public List<String> read() {
         List<String> words;
         try {
             Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader()

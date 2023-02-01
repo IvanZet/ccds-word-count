@@ -8,26 +8,23 @@ import java.util.regex.Pattern;
 public class WordsCounterImpl implements WordsCounter {
 
     private final UserInputReader userInputReader;
-    private String stopWordsFilename;
     private final StopWordsReader stopWordsReader;
 
     /**
      * Constructor for this class.
      *
-     * @param userInputReader   userInputReader object that reads user's input from console
-     * @param stopWordsFilename string with the name of the file with stop words
-     * @param stopWordsReader   stopWordsReader
+     * @param userInputReader userInputReader object that reads user's input from console
+     * @param stopWordsReader stopWordsReader
      */
-    public WordsCounterImpl(UserInputReader userInputReader, String stopWordsFilename, StopWordsReader stopWordsReader) {
+    public WordsCounterImpl(UserInputReader userInputReader, StopWordsReader stopWordsReader) {
         this.userInputReader = userInputReader;
-        this.stopWordsFilename = stopWordsFilename;
         this.stopWordsReader = stopWordsReader;
     }
 
     /**
-     * Counts words in the provided text considering provided stop words
+     * Counts words after getting user's input and stop words.
      *
-     * @return int of how many words found in the provided text
+     * @return int of how many words found in the user's input
      */
     @Override
     public int count() {
@@ -45,6 +42,6 @@ public class WordsCounterImpl implements WordsCounter {
     }
 
     private List<String> readStopWords() {
-        return stopWordsReader.read(stopWordsFilename);
+        return stopWordsReader.read();
     }
 }

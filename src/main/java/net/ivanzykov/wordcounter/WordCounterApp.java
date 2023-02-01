@@ -17,8 +17,8 @@ public class WordCounterApp {
 
     public static void main(final String[] args) {
         UserInputReader userInputReader = new UserInputReaderImpl();
-        StopWordsReader stopWordsReader = new StopWordsReaderImpl();
-        WordsCounter wordsCounter = new WordsCounterImpl(userInputReader, STOP_WORDS_FILENAME, stopWordsReader);
+        StopWordsReader stopWordsReader = new StopWordsReaderImpl(STOP_WORDS_FILENAME);
+        WordsCounter wordsCounter = new WordsCounterImpl(userInputReader, stopWordsReader);
         ConsolePrinter consolePrinter = new ConsolePrinterImpl();
 
         new Runner(wordsCounter, consolePrinter).run();
