@@ -22,8 +22,6 @@ public class Runner {
     public void run() {
         printToConsole("Enter text: ");
 
-        printToConsole("Number of words: ");
-
         int countOfWords = 0;
         try {
             countOfWords = countWords();
@@ -31,6 +29,8 @@ public class Runner {
             printToConsole(e.getLocalizedMessage());
             System.exit(-1);
         }
+
+        printToConsole("Number of words: ");
 
         printToConsole(countOfWords);
     }
