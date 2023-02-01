@@ -15,15 +15,12 @@ class WordCounterAppTest {
     void main() {
         // Prepare user's input
         InputStream standardIn = System.in;
-        String usersInput = "abc";
-        InputStream inputStream = new ByteArrayInputStream(usersInput.getBytes());
-        System.setIn(inputStream);
+        System.setIn(new ByteArrayInputStream("abc".getBytes()));
 
         // Capture printing to console
         PrintStream standardOut = System.out;
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-        PrintStream printStream = new PrintStream(outputStreamCaptor);
-        System.setOut(printStream);
+        System.setOut(new PrintStream(outputStreamCaptor));
 
         // Run this test
         WordCounterApp.main(new String[]{});
