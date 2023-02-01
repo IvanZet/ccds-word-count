@@ -1,4 +1,4 @@
-package net.ivanzykov.wordcounter.runner;
+package net.ivanzykov.wordcounter.wordscounter;
 
 /**
  * For classed reading user's input

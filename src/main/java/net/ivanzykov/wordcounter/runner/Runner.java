@@ -1,66 +1,45 @@
 package net.ivanzykov.wordcounter.runner;
 
-import java.util.List;
-
 /**
  * Controls execution flow of the app.
  */
 public class Runner {
 
     private final WordsCounter wordsCounter;
-    private final UserInputReader userInputReader;
-    private final StopWordsReader stopWordsReader;
     private final ConsolePrinter consolePrinter;
-
-    private static final String STOP_WORDS_FILENAME = "stopwords.txt";
 
     /**
      * Constructor for this class
      *
-     * @param wordsCounter      wordsCounter object which counts words in the user's input
-     * @param userInputReader   userInputReader object that reads user's input from console
-     * @param consolePrinter    consolePrinter object that prints to the console
-     * @param stopWordsReader   stopWordsReader object that reads stop words from a file
+     * @param wordsCounter   wordsCounter object which counts words in the user's input
+     * @param consolePrinter consolePrinter object that prints to the console
      */
-    public Runner(WordsCounter wordsCounter, UserInputReader userInputReader, ConsolePrinter consolePrinter,
-                  StopWordsReader stopWordsReader) {
+    public Runner(WordsCounter wordsCounter, ConsolePrinter consolePrinter) {
         this.wordsCounter = wordsCounter;
-        this.userInputReader = userInputReader;
         this.consolePrinter = consolePrinter;
-        this.stopWordsReader = stopWordsReader;
     }
 
     public void run() {
         printToConsole("Enter text: ");
 
-        String usersInput = readUsersInput();
+        printToConsole("Number of words: ");
 
-        List<String> stopWords = null;
+        int countOfWords = 0;
         try {
-            stopWords = readStopWords();
+            countOfWords = countWords();
         } catch (StopWordsReaderException e) {
             printToConsole(e.getLocalizedMessage());
             System.exit(-1);
         }
 
-        printToConsole("Number of words: ");
-
-        printToConsole(countWords(usersInput, stopWords));
+        printToConsole(countOfWords);
     }
 
     private <T> void printToConsole(T text) {
         consolePrinter.print(text);
     }
 
-    private String readUsersInput() {
-        return userInputReader.read();
-    }
-
-    private List<String> readStopWords() {
-        return stopWordsReader.read(STOP_WORDS_FILENAME);
-    }
-
-    private int countWords(String usersInput, List<String> stopWords) {
-        return wordsCounter.count(usersInput, stopWords);
+    private int countWords() {
+        return wordsCounter.count();
     }
 }

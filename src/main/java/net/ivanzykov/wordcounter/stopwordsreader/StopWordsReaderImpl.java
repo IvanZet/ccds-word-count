@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.stopwordsreader;
 
-import net.ivanzykov.wordcounter.runner.StopWordsReader;
+import net.ivanzykov.wordcounter.wordscounter.StopWordsReader;
 import net.ivanzykov.wordcounter.runner.StopWordsReaderException;
 
 import java.io.IOException;

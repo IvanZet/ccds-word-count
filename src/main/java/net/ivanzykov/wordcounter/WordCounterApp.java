@@ -4,6 +4,8 @@ import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
 import net.ivanzykov.wordcounter.runner.*;
 import net.ivanzykov.wordcounter.stopwordsreader.StopWordsReaderImpl;
 import net.ivanzykov.wordcounter.userinputreader.UserInputReaderImpl;
+import net.ivanzykov.wordcounter.wordscounter.StopWordsReader;
+import net.ivanzykov.wordcounter.wordscounter.UserInputReader;
 import net.ivanzykov.wordcounter.wordscounter.WordsCounterImpl;
 
 /**
@@ -11,12 +13,14 @@ import net.ivanzykov.wordcounter.wordscounter.WordsCounterImpl;
  */
 public class WordCounterApp {
 
-    public static void main(final String[] args) {
-        WordsCounter wordsCounter = new WordsCounterImpl();
-        UserInputReader userInputReader = new UserInputReaderImpl();
-        ConsolePrinter consolePrinter = new ConsolePrinterImpl();
-        StopWordsReader stopWordsReader = new StopWordsReaderImpl();
+    public static final String STOP_WORDS_FILENAME = "stopwords.txt";
 
-        new Runner(wordsCounter, userInputReader, consolePrinter, stopWordsReader).run();
+    public static void main(final String[] args) {
+        UserInputReader userInputReader = new UserInputReaderImpl();
+        StopWordsReader stopWordsReader = new StopWordsReaderImpl();
+        WordsCounter wordsCounter = new WordsCounterImpl(userInputReader, STOP_WORDS_FILENAME, stopWordsReader);
+        ConsolePrinter consolePrinter = new ConsolePrinterImpl();
+
+        new Runner(wordsCounter, consolePrinter).run();
     }
 }
