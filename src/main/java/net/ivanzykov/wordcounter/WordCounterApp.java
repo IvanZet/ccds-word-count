@@ -11,6 +11,8 @@ import net.ivanzykov.wordcounter.wordscounter.WordsCounterImpl;
  */
 public class WordCounterApp {
 
+    public static final String STOP_WORDS_FILENAME = "stopwords.txt";
+
     public static void main(final String[] args) {
         WordsCounter wordsCounter = new WordsCounterImpl();
         UserInputReader userInputReader = new UserInputReaderImpl();
