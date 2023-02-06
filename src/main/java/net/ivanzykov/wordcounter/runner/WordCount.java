@@ -6,6 +6,7 @@ public class WordCount {
 
     private List<String> stopWords;
     private final String stopWordsFileName;
+    private String usersInput;
 
     public WordCount(String stopWordsFileName) {
         this.stopWordsFileName = stopWordsFileName;
@@ -21,5 +22,13 @@ public class WordCount {
 
     public String getStopWordsFileName() {
         return stopWordsFileName;
+    }
+
+    public String getUsersInput() {
+        return usersInput;
+    }
+
+    public void setUsersInput(String usersInput) {
+        this.usersInput = usersInput;
     }
 }
