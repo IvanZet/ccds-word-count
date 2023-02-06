@@ -4,7 +4,7 @@ import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
 import net.ivanzykov.wordcounter.runner.*;
 import net.ivanzykov.wordcounter.stopwordsreader.StopWordsReaderImpl;
 import net.ivanzykov.wordcounter.userinputreader.UserInputReaderImpl;
-import net.ivanzykov.wordcounter.wordscounter.WordsCounterImpl;
+import net.ivanzykov.wordcounter.counterofwords.WordsCounterImpl;
 
 /**
  * Instantiates required classes and triggers the runner object.

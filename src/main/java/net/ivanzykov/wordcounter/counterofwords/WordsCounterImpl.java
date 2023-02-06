@@ -1,4 +1,4 @@
-package net.ivanzykov.wordcounter.wordscounter;
+package net.ivanzykov.wordcounter.counterofwords;
 
 import net.ivanzykov.wordcounter.runner.WordsCounter;
 
