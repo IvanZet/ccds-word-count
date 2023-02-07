@@ -24,7 +24,7 @@ class ResultPrinterTest {
 
     @BeforeEach
     void setUp() {
-        wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME);
+        wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null);
 
         // Capture output to console
         standardOut = System.out;

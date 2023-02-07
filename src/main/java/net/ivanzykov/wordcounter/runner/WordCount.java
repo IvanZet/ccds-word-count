@@ -8,9 +8,11 @@ public class WordCount {
     private final String stopWordsFileName;
     private String usersInput;
     private Integer countOfWords;
+    private final List<Actor> actors;
 
-    public WordCount(String stopWordsFileName) {
+    public WordCount(String stopWordsFileName, List<Actor> actors) {
         this.stopWordsFileName = stopWordsFileName;
+        this.actors = actors;
     }
 
     public List<String> getStopWords() {
@@ -39,5 +41,11 @@ public class WordCount {
 
     public void setCountOfWords(Integer countOfWords) {
         this.countOfWords = countOfWords;
+    }
+
+    public void count() {
+        for (Actor actor: actors) {
+            actor.determineWordCount(this);
+        }
     }
 }
