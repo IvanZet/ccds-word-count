@@ -51,8 +51,12 @@ public class WordCount {
                 actor.determineWordCount(this);
             }
         } catch (StopWordsReaderException | FieldOfWordCountNullException e) {
-            consolePrinter.print(e.getLocalizedMessage());
+            printErrorMessageToConsole(e);
             System.exit(-1);
         }
+    }
+
+    private void printErrorMessageToConsole(RuntimeException e) {
+        consolePrinter.print(e.getLocalizedMessage());
     }
 }
