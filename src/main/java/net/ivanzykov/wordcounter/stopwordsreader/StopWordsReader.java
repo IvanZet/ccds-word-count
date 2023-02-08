@@ -1,8 +1,8 @@
 package net.ivanzykov.wordcounter.stopwordsreader;
 
-import net.ivanzykov.wordcounter.runner.Actor;
-import net.ivanzykov.wordcounter.runner.StopWordsReaderException;
-import net.ivanzykov.wordcounter.runner.WordCount;
+import net.ivanzykov.wordcounter.wordcount.Actor;
+import net.ivanzykov.wordcounter.wordcount.StopWordsReaderException;
+import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

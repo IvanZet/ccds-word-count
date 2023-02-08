@@ -1,4 +1,4 @@
-package net.ivanzykov.wordcounter.runner;
+package net.ivanzykov.wordcounter.wordcount;
 
 /**
  * For errors while reading stop words.

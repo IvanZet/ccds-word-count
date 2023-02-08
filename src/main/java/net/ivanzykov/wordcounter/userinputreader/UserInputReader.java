@@ -1,8 +1,8 @@
 package net.ivanzykov.wordcounter.userinputreader;
 
-import net.ivanzykov.wordcounter.runner.Actor;
-import net.ivanzykov.wordcounter.runner.ConsolePrinter;
-import net.ivanzykov.wordcounter.runner.WordCount;
+import net.ivanzykov.wordcounter.wordcount.Actor;
+import net.ivanzykov.wordcounter.wordcount.ConsolePrinter;
+import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.util.Scanner;
 

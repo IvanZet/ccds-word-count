@@ -1,8 +1,8 @@
 package net.ivanzykov.wordcounter.counterofwords;
 
-import net.ivanzykov.wordcounter.runner.Actor;
-import net.ivanzykov.wordcounter.runner.FieldOfWordCountNullException;
-import net.ivanzykov.wordcounter.runner.WordCount;
+import net.ivanzykov.wordcounter.wordcount.Actor;
+import net.ivanzykov.wordcounter.wordcount.FieldOfWordCountNullException;
+import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.util.List;
 import java.util.Objects;

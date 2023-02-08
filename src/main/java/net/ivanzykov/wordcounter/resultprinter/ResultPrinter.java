@@ -1,9 +1,9 @@
 package net.ivanzykov.wordcounter.resultprinter;
 
-import net.ivanzykov.wordcounter.runner.Actor;
-import net.ivanzykov.wordcounter.runner.ConsolePrinter;
-import net.ivanzykov.wordcounter.runner.FieldOfWordCountNullException;
-import net.ivanzykov.wordcounter.runner.WordCount;
+import net.ivanzykov.wordcounter.wordcount.Actor;
+import net.ivanzykov.wordcounter.wordcount.ConsolePrinter;
+import net.ivanzykov.wordcounter.wordcount.FieldOfWordCountNullException;
+import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.util.Objects;
 

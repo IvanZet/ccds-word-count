@@ -3,7 +3,7 @@ package net.ivanzykov.wordcounter;
 import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
 import net.ivanzykov.wordcounter.counterofwords.CounterOfWords;
 import net.ivanzykov.wordcounter.resultprinter.ResultPrinter;
-import net.ivanzykov.wordcounter.runner.*;
+import net.ivanzykov.wordcounter.wordcount.*;
 import net.ivanzykov.wordcounter.stopwordsreader.StopWordsReader;
 import net.ivanzykov.wordcounter.userinputreader.UserInputReader;
 

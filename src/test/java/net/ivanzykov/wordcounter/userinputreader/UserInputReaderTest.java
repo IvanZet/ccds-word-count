@@ -2,8 +2,8 @@ package net.ivanzykov.wordcounter.userinputreader;
 
 import net.ivanzykov.wordcounter.App;
 import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
-import net.ivanzykov.wordcounter.runner.ConsolePrinter;
-import net.ivanzykov.wordcounter.runner.WordCount;
+import net.ivanzykov.wordcounter.wordcount.ConsolePrinter;
+import net.ivanzykov.wordcounter.wordcount.WordCount;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;

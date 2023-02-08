@@ -1,7 +1,7 @@
 package net.ivanzykov.wordcounter.stopwordsreader;
 
 import net.ivanzykov.wordcounter.App;
-import net.ivanzykov.wordcounter.runner.WordCount;
+import net.ivanzykov.wordcounter.wordcount.WordCount;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
