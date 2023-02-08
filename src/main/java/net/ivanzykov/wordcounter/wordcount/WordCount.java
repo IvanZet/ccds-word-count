@@ -2,6 +2,10 @@ package net.ivanzykov.wordcounter.wordcount;
 
 import java.util.List;
 
+/**
+ * Holds data needed to determine word count in the user's input considering stop words, and calls components of this
+ * app.
+ */
 public class WordCount {
 
     private List<String> stopWords;
@@ -11,6 +15,13 @@ public class WordCount {
     private final List<Actor> actors;
     private final ConsolePrinter consolePrinter;
 
+    /**
+     * Constructor of this class.
+     *
+     * @param stopWordsFileName string with the name of the file with stop words
+     * @param actors            list of actor objects that do their part of the job to determine the count of words
+     * @param consolePrinter    consolePrinter object that prints supplied objects to the console
+     */
     public WordCount(String stopWordsFileName, List<Actor> actors, ConsolePrinter consolePrinter) {
         this.stopWordsFileName = stopWordsFileName;
         this.actors = actors;
@@ -45,6 +56,9 @@ public class WordCount {
         this.countOfWords = countOfWords;
     }
 
+    /**
+     * Calls components of this app to determine the count of words in user's input and handles exceptions.
+     */
     public void count() {
         try {
             for (Actor actor: actors) {
