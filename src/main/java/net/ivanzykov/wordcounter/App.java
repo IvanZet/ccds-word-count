@@ -28,6 +28,6 @@ public class App {
                 new CounterOfWords(),
                 new ResultPrinter(consolePrinter)));
 
-        new WordCount(STOP_WORDS_FILENAME, actors).count();
+        new WordCount(STOP_WORDS_FILENAME, actors, consolePrinter).count();
     }
 }

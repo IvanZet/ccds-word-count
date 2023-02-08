@@ -13,7 +13,7 @@ class StopWordsReaderTest {
     @Test
     void determineWordCount() {
         // Prepare args
-        WordCount wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null);
+        WordCount wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null, null);
 
         // Check blanc state before this test
         assertNull(wordCount.getStopWords());

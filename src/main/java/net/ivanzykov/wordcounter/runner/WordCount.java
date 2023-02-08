@@ -9,10 +9,12 @@ public class WordCount {
     private String usersInput;
     private Integer countOfWords;
     private final List<Actor> actors;
+    private final ConsolePrinter consolePrinter;
 
-    public WordCount(String stopWordsFileName, List<Actor> actors) {
+    public WordCount(String stopWordsFileName, List<Actor> actors, ConsolePrinter consolePrinter) {
         this.stopWordsFileName = stopWordsFileName;
         this.actors = actors;
+        this.consolePrinter = consolePrinter;
     }
 
     public List<String> getStopWords() {
@@ -44,8 +46,13 @@ public class WordCount {
     }
 
     public void count() {
-        for (Actor actor: actors) {
-            actor.determineWordCount(this);
+        try {
+            for (Actor actor: actors) {
+                actor.determineWordCount(this);
+            }
+        } catch (StopWordsReaderException | FieldOfWordCountNullException e) {
+            consolePrinter.print(e.getLocalizedMessage());
+            System.exit(-1);
         }
     }
 }

@@ -18,7 +18,7 @@ class CounterOfWordsTest {
 
     @BeforeEach
     void setUp() {
-        wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null);
+        wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null, null);
         counterOfWords = new CounterOfWords();
     }
 
