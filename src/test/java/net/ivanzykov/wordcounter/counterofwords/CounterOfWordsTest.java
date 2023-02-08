@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.counterofwords;
 
-import net.ivanzykov.wordcounter.WordCounterApp;
+import net.ivanzykov.wordcounter.App;
 import net.ivanzykov.wordcounter.runner.Actor;
 import net.ivanzykov.wordcounter.runner.FieldOfWordCountNullException;
 import net.ivanzykov.wordcounter.runner.WordCount;
@@ -18,7 +18,7 @@ class CounterOfWordsTest {
 
     @BeforeEach
     void setUp() {
-        wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null, null);
+        wordCount = new WordCount(App.STOP_WORDS_FILENAME, null, null);
         counterOfWords = new CounterOfWords();
     }
 

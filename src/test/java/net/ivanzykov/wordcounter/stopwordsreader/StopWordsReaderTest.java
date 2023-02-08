@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.stopwordsreader;
 
-import net.ivanzykov.wordcounter.WordCounterApp;
+import net.ivanzykov.wordcounter.App;
 import net.ivanzykov.wordcounter.runner.WordCount;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class StopWordsReaderTest {
     @Test
     void determineWordCount() {
         // Prepare args
-        WordCount wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null, null);
+        WordCount wordCount = new WordCount(App.STOP_WORDS_FILENAME, null, null);
 
         // Check blanc state before this test
         assertNull(wordCount.getStopWords());

@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.resultprinter;
 
-import net.ivanzykov.wordcounter.WordCounterApp;
+import net.ivanzykov.wordcounter.App;
 import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
 import net.ivanzykov.wordcounter.runner.Actor;
 import net.ivanzykov.wordcounter.runner.ConsolePrinter;
@@ -24,7 +24,7 @@ class ResultPrinterTest {
 
     @BeforeEach
     void setUp() {
-        wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null, null);
+        wordCount = new WordCount(App.STOP_WORDS_FILENAME, null, null);
 
         // Capture output to console
         standardOut = System.out;

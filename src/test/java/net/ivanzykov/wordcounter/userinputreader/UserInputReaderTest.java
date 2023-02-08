@@ -1,6 +1,6 @@
 package net.ivanzykov.wordcounter.userinputreader;
 
-import net.ivanzykov.wordcounter.WordCounterApp;
+import net.ivanzykov.wordcounter.App;
 import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
 import net.ivanzykov.wordcounter.runner.ConsolePrinter;
 import net.ivanzykov.wordcounter.runner.WordCount;
@@ -28,7 +28,7 @@ class UserInputReaderTest {
         System.setOut(printStream);
 
         // Prepare args
-        WordCount wordCount = new WordCount(WordCounterApp.STOP_WORDS_FILENAME, null, null);
+        WordCount wordCount = new WordCount(App.STOP_WORDS_FILENAME, null, null);
         ConsolePrinter consolePrinter = new ConsolePrinterImpl();
 
         // Check blanc state before this test
