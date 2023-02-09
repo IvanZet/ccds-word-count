@@ -6,7 +6,7 @@ import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.util.Scanner;
 
-public class UserInputReader implements Actor {
+public class UserInputConsoleReader implements Actor {
 
     private final ConsolePrinter consolePrinter;
 
@@ -15,7 +15,7 @@ public class UserInputReader implements Actor {
      *
      * @param consolePrinter    consolePrinter object that prints to the console
      */
-    public UserInputReader(ConsolePrinter consolePrinter) {
+    public UserInputConsoleReader(ConsolePrinter consolePrinter) {
         this.consolePrinter = consolePrinter;
     }
 

@@ -13,7 +13,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UserInputReaderTest {
+class UserInputConsoleReaderTest {
 
     @Test
     void determineWordCount_printsTextToConsoleAndSetsUsersInput() {
@@ -35,7 +35,7 @@ class UserInputReaderTest {
         assertNull(wordCount.getUsersInput());
 
         // Run this test
-        new UserInputReader(consolePrinter).determineWordCount(wordCount);
+        new UserInputConsoleReader(consolePrinter).determineWordCount(wordCount);
 
         assertAll(
                 () -> assertEquals("Enter text: ", outputStreamCaptor.toString()),

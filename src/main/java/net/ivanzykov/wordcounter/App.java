@@ -5,7 +5,7 @@ import net.ivanzykov.wordcounter.counterofwords.CounterOfWords;
 import net.ivanzykov.wordcounter.resultprinter.ResultPrinter;
 import net.ivanzykov.wordcounter.wordcount.*;
 import net.ivanzykov.wordcounter.stopwordsreader.StopWordsReader;
-import net.ivanzykov.wordcounter.userinputreader.UserInputReader;
+import net.ivanzykov.wordcounter.userinputreader.UserInputConsoleReader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +24,7 @@ public class App {
 
         List<Actor> actors = new ArrayList<>(Arrays.asList(
                 new StopWordsReader(),
-                new UserInputReader(consolePrinter),
+                new UserInputConsoleReader(consolePrinter),
                 new CounterOfWords(),
                 new ResultPrinter(consolePrinter)));
 
