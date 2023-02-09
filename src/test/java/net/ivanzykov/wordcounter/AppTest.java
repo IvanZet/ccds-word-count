@@ -7,12 +7,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AppTest {
 
     @Test
-    void main() {
+    void main_countsOneWord() {
         // Prepare user's input
         InputStream standardIn = System.in;
         String usersInput = "abc";
@@ -33,5 +34,14 @@ class AppTest {
         // Restore standard in and out
         System.setIn(standardIn);
         System.setOut(standardOut);
+    }
+
+    @Test
+    void main_twoArguments_throwsException() {
+        Exception exception = assertThrows(CriticalAppException.class, () ->
+                App.main(new String[]{"one", "two"}));
+
+        assertEquals("Wrong number of arguments. Only one is supported.",
+                exception.getMessage());
     }
 }
