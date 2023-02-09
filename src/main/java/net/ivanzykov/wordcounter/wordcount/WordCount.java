@@ -64,7 +64,7 @@ public class WordCount {
             for (Actor actor: actors) {
                 actor.determineWordCount(this);
             }
-        } catch (StopWordsReaderException | FieldOfWordCountNullException e) {
+        } catch (FileReaderException | FieldOfWordCountNullException e) {
             printErrorMessageToConsole(e);
             System.exit(-1);
         }

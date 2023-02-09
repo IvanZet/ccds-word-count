@@ -2,7 +2,7 @@ package net.ivanzykov.wordcounter.stopwordsreader;
 
 import net.ivanzykov.wordcounter.wordcount.Actor;
 import net.ivanzykov.wordcounter.wordcount.FileReader;
-import net.ivanzykov.wordcounter.wordcount.StopWordsReaderException;
+import net.ivanzykov.wordcounter.wordcount.FileReaderException;
 import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.io.IOException;
@@ -30,9 +30,9 @@ public class StopWordsReader implements Actor, FileReader {
                 stopWords = lines.collect(Collectors.toList());
             }
         } catch (NullPointerException e) {
-            throw new StopWordsReaderException("File with stop words not found.");
+            throw new FileReaderException("File with stop words not found.");
         } catch (URISyntaxException | IOException e) {
-            throw new StopWordsReaderException("Failed to read the file with stop words." + System.lineSeparator() +
+            throw new FileReaderException("Failed to read the file with stop words." + System.lineSeparator() +
                     e.getMessage());
         }
         wordCount.setStopWords(stopWords);
