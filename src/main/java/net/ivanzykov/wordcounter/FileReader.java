@@ -1,4 +1,4 @@
-package net.ivanzykov.wordcounter.wordcount;
+package net.ivanzykov.wordcounter;
 
 import java.net.URISyntaxException;
 import java.nio.file.Path;

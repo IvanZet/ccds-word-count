@@ -1,7 +1,7 @@
 package net.ivanzykov.wordcounter.userinputreader;
 
+import net.ivanzykov.wordcounter.FileReader;
 import net.ivanzykov.wordcounter.wordcount.Actor;
-import net.ivanzykov.wordcounter.wordcount.FileReader;
 import net.ivanzykov.wordcounter.wordcount.FileReaderException;
 import net.ivanzykov.wordcounter.wordcount.WordCount;
 
