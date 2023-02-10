@@ -7,6 +7,7 @@ import net.ivanzykov.wordcounter.stopwordsreader.StopWordsReader;
 import net.ivanzykov.wordcounter.userinputreader.UserInputFactory;
 import net.ivanzykov.wordcounter.wordcount.Actor;
 import net.ivanzykov.wordcounter.wordcount.ConsolePrinter;
+import net.ivanzykov.wordcounter.wordcount.CriticalAppException;
 import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.util.ArrayList;

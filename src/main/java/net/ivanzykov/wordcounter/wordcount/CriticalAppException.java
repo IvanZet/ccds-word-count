@@ -1,4 +1,4 @@
-package net.ivanzykov.wordcounter;
+package net.ivanzykov.wordcounter.wordcount;
 
 /**
  * It should terminate execution of this app.

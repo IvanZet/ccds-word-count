@@ -1,7 +1,5 @@
 package net.ivanzykov.wordcounter.wordcount;
 
-import net.ivanzykov.wordcounter.CriticalAppException;
-
 import java.util.List;
 
 /**

@@ -1,5 +1,6 @@
 package net.ivanzykov.wordcounter;
 
+import net.ivanzykov.wordcounter.wordcount.CriticalAppException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
