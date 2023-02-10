@@ -41,12 +41,12 @@ class CounterOfAllWordsTest {
         wordCount.setUsersInput(usersInput);
 
         // Check blanc state before this test
-        assertNull(wordCount.getCountOfWords());
+        assertNull(wordCount.getCountOfAllWords());
 
         // Run this test
         counterOfWords.determineWordCount(wordCount);
 
-        assertEquals(expected, wordCount.getCountOfWords());
+        assertEquals(expected, wordCount.getCountOfAllWords());
     }
 
     @Test

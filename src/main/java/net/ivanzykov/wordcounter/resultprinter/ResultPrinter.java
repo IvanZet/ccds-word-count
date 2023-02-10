@@ -28,7 +28,7 @@ public class ResultPrinter implements Actor {
     public void determineWordCount(WordCount wordCount) {
         printToConsole("Number of words: ");
         try {
-            printToConsole(Objects.requireNonNull(wordCount.getCountOfWords()));
+            printToConsole(Objects.requireNonNull(wordCount.getCountOfAllWords()));
         } catch (NullPointerException e) {
             throw new FieldOfWordCountNullException("Can't print count of words. It is null in the WordCount object");
         }
