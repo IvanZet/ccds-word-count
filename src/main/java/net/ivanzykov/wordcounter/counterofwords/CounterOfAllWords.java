@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-public class CounterOfWords implements Actor {
+public class CounterOfAllWords implements Actor {
 
     /**
      * Counts words in users input considering the stop words.
