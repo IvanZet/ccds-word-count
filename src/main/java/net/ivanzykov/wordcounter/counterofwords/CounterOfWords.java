@@ -4,6 +4,7 @@ import net.ivanzykov.wordcounter.wordcount.Actor;
 import net.ivanzykov.wordcounter.wordcount.FieldOfWordCountNullException;
 import net.ivanzykov.wordcounter.wordcount.WordCount;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -18,7 +19,6 @@ public class CounterOfWords implements Actor {
      */
     @Override
     public void determineWordCount(WordCount wordCount) {
-        Integer counter = 0;
         String errorMessageStart = "Failed to count words. ";
         String errorMessageEnd = "is null in WordCount object";
         String usersInput;
@@ -33,11 +33,12 @@ public class CounterOfWords implements Actor {
         } catch (NullPointerException e) {
             throw new FieldOfWordCountNullException(errorMessageStart + "Stop words " + errorMessageEnd);
         }
-        for (String word: usersInput.split(" ")) {
-            if (Pattern.matches("[a-z,A-Z]+", word) && ! stopWords.contains(word)) {
-                counter++;
+        List<String> words = new ArrayList<>();
+        for (String word : usersInput.split("[^a-z,A-Z]+")) {
+            if (Pattern.matches("[a-z,A-Z]+", word) && !stopWords.contains(word)) {
+                words.add(word);
             }
         }
-        wordCount.setCountOfWords(counter);
+        wordCount.setCountOfWords(words.size());
     }
 }
