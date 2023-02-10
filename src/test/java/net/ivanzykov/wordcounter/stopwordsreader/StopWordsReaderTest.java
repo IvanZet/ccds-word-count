@@ -6,14 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class StopWordsReaderTest {
 
     @Test
     void determineWordCount() {
         // Prepare args
-        WordCount wordCount = new WordCount(App.STOP_WORDS_FILENAME, null, null);
+        WordCount wordCount = new WordCount(App.STOP_WORDS_FILENAME, null);
 
         // Check blanc state before this test
         assertNull(wordCount.getStopWords());

@@ -65,4 +65,12 @@ class AppTest {
 
         assertEquals("Number of words: 4", outputStreamCaptor.toString().trim());
     }
+
+    @Test
+    void main_usersInputFileNotFound_throwsCriticalException() {
+        Exception exception = assertThrows(CriticalAppException.class, () ->
+                App.main(new String[]{"wrongFile"}));
+
+        assertEquals("File with user's input not found.", exception.getMessage());
+    }
 }

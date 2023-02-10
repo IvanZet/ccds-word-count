@@ -28,7 +28,7 @@ class UserInputConsoleReaderTest {
         System.setOut(printStream);
 
         // Prepare args
-        WordCount wordCount = new WordCount(App.STOP_WORDS_FILENAME, null, null);
+        WordCount wordCount = new WordCount(App.STOP_WORDS_FILENAME, null);
         ConsolePrinter consolePrinter = new ConsolePrinterImpl();
 
         // Check blanc state before this test
