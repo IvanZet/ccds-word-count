@@ -1,5 +1,7 @@
 package net.ivanzykov.wordcounter.wordcount;
 
+import net.ivanzykov.wordcounter.CriticalAppException;
+
 import java.util.List;
 
 /**
@@ -13,19 +15,16 @@ public class WordCount {
     private String usersInput;
     private Integer countOfWords;
     private final List<Actor> actors;
-    private final ConsolePrinter consolePrinter;
 
     /**
      * Constructor of this class.
      *
      * @param stopWordsFileName string with the name of the file with stop words
      * @param actors            list of actor objects that do their part of the job to determine the count of words
-     * @param consolePrinter    consolePrinter object that prints supplied objects to the console
      */
-    public WordCount(String stopWordsFileName, List<Actor> actors, ConsolePrinter consolePrinter) {
+    public WordCount(String stopWordsFileName, List<Actor> actors) {
         this.stopWordsFileName = stopWordsFileName;
         this.actors = actors;
-        this.consolePrinter = consolePrinter;
     }
 
     public List<String> getStopWords() {
@@ -64,13 +63,8 @@ public class WordCount {
             for (Actor actor: actors) {
                 actor.determineWordCount(this);
             }
-        } catch (StopWordsReaderException | FieldOfWordCountNullException e) {
-            printErrorMessageToConsole(e);
-            System.exit(-1);
+        } catch (FileReaderException | FieldOfWordCountNullException e) {
+            throw new CriticalAppException(e.getLocalizedMessage());
         }
-    }
-
-    private void printErrorMessageToConsole(RuntimeException e) {
-        consolePrinter.print(e.getLocalizedMessage());
     }
 }

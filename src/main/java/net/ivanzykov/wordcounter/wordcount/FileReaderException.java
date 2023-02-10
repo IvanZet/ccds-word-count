@@ -3,9 +3,9 @@ package net.ivanzykov.wordcounter.wordcount;
 /**
  * For errors while reading stop words.
  */
-public class StopWordsReaderException extends RuntimeException {
+public class FileReaderException extends RuntimeException {
 
-    public StopWordsReaderException (String message) {
+    public FileReaderException(String message) {
         super(message);
     }
 }

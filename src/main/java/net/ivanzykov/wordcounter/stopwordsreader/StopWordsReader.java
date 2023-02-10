@@ -1,20 +1,19 @@
 package net.ivanzykov.wordcounter.stopwordsreader;
 
 import net.ivanzykov.wordcounter.wordcount.Actor;
-import net.ivanzykov.wordcounter.wordcount.StopWordsReaderException;
+import net.ivanzykov.wordcounter.wordcount.FileReader;
+import net.ivanzykov.wordcounter.wordcount.FileReaderException;
 import net.ivanzykov.wordcounter.wordcount.WordCount;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StopWordsReader implements Actor {
+public class StopWordsReader implements Actor, FileReader {
 
     /**
      * Reads stop words from a file in the source
@@ -26,15 +25,14 @@ public class StopWordsReader implements Actor {
     public void determineWordCount(WordCount wordCount) {
         List<String> stopWords;
         try {
-            Path path = Paths.get(Objects.requireNonNull(getClass().getClassLoader()
-                    .getResource(wordCount.getStopWordsFileName())).toURI());
+            Path path = getPathOfTheFile(wordCount.getStopWordsFileName());
             try (Stream<String> lines = Files.lines(path)) {
                 stopWords = lines.collect(Collectors.toList());
             }
         } catch (NullPointerException e) {
-            throw new StopWordsReaderException("File with stop words not found.");
+            throw new FileReaderException("File with stop words not found.");
         } catch (URISyntaxException | IOException e) {
-            throw new StopWordsReaderException("Failed to read the file with stop words." + System.lineSeparator() +
+            throw new FileReaderException("Failed to read the file with stop words." + System.lineSeparator() +
                     e.getMessage());
         }
         wordCount.setStopWords(stopWords);
