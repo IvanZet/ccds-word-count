@@ -1,44 +1,46 @@
 package net.ivanzykov.wordcounter.counterofwords;
 
-import net.ivanzykov.wordcounter.wordcount.Actor;
 import net.ivanzykov.wordcounter.wordcount.FieldOfWordCountNullException;
 import net.ivanzykov.wordcounter.wordcount.WordCount;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-public class CounterOfWords implements Actor {
+/**
+ * For classes counting words in user's input considering stop words.
+ */
+public interface CounterOfWords {
+    String ERROR_MESSAGE_START = "Failed to count words. ";
+    String ERROR_MESSAGE_END = "is null in WordCount object";
 
     /**
-     * Counts words in users input considering the stop words.
+     * Gets user's input and stop words from {@link WordCount} object, identifies words and adds them to the supplied
+     * collection.
      *
-     * @param wordCount wordCount object holding name of the file with stop words and for storing the result of this
-     *                  method
+     * @param collection collection object of Strings where identified words should be stored
+     * @param wordCount  wordCount object holding user's input and stop words
      */
-    @Override
-    public void determineWordCount(WordCount wordCount) {
-        String errorMessageStart = "Failed to count words. ";
-        String errorMessageEnd = "is null in WordCount object";
+    default void collectWords(Collection<String> collection, WordCount wordCount) {
         String usersInput;
         try {
             usersInput = Objects.requireNonNull(wordCount.getUsersInput());
         } catch (NullPointerException e) {
-            throw new FieldOfWordCountNullException(errorMessageStart + "User's input " + errorMessageEnd);
+            throw new FieldOfWordCountNullException(ERROR_MESSAGE_START + "User's input " + ERROR_MESSAGE_END);
         }
+
         List<String> stopWords;
         try {
             stopWords = Objects.requireNonNull(wordCount.getStopWords());
         } catch (NullPointerException e) {
-            throw new FieldOfWordCountNullException(errorMessageStart + "Stop words " + errorMessageEnd);
+            throw new FieldOfWordCountNullException(ERROR_MESSAGE_START + "Stop words " + ERROR_MESSAGE_END);
         }
-        List<String> words = new ArrayList<>();
+
         for (String word : usersInput.split("[^a-z,A-Z]+")) {
             if (Pattern.matches("[a-z,A-Z]+", word) && !stopWords.contains(word)) {
-                words.add(word);
+                collection.add(word);
             }
         }
-        wordCount.setCountOfWords(words.size());
     }
 }

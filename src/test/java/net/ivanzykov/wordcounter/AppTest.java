@@ -37,14 +37,14 @@ class AppTest {
     void main_usersInputFromConsole_countsOneWord() {
         // Prepare user's input
         InputStream standardIn = System.in;
-        String usersInput = "abc";
+        String usersInput = "Humpty-Dumpty sat on a wall. Humpty-Dumpty had a great fall.";
         InputStream inputStream = new ByteArrayInputStream(usersInput.getBytes());
         System.setIn(inputStream);
 
         // Run this test
         App.main(new String[]{});
 
-        assertEquals("Enter text: Number of words: 1", outputStreamCaptor.toString().trim());
+        assertEquals("Enter text: Number of words: 9, unique: 7", outputStreamCaptor.toString().trim());
 
         // Restore standard in
         System.setIn(standardIn);
@@ -64,7 +64,7 @@ class AppTest {
         // Run this test
         App.main(new String[]{"mytext.txt"});
 
-        assertEquals("Number of words: 4", outputStreamCaptor.toString().trim());
+        assertEquals("Number of words: 4, unique: 4", outputStreamCaptor.toString().trim());
     }
 
     @Test
