@@ -2,6 +2,7 @@ package net.ivanzykov.wordcounter;
 
 import net.ivanzykov.wordcounter.consoleprinter.ConsolePrinterImpl;
 import net.ivanzykov.wordcounter.counterofwords.CounterOfAllWords;
+import net.ivanzykov.wordcounter.counterofwords.CounterOfUniqueWords;
 import net.ivanzykov.wordcounter.resultprinter.ResultPrinter;
 import net.ivanzykov.wordcounter.stopwordsreader.StopWordsReader;
 import net.ivanzykov.wordcounter.userinputreader.UserInputFactory;
@@ -40,6 +41,7 @@ public class App {
                 new StopWordsReader(),
                 userInputReader,
                 new CounterOfAllWords(),
+                new CounterOfUniqueWords(),
                 new ResultPrinter(consolePrinter)));
 
         new WordCount(STOP_WORDS_FILENAME, actors).count();

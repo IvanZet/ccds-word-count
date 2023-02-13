@@ -11,8 +11,9 @@ public class WordCount {
     private List<String> stopWords;
     private final String stopWordsFileName;
     private String usersInput;
-    private Integer countOfAllWords;
     private final List<Actor> actors;
+    private Integer countOfAllWords;
+    private Integer countOfUniqueWords;
 
     /**
      * Constructor of this class.
@@ -51,6 +52,14 @@ public class WordCount {
 
     public void setCountOfAllWords(Integer countOfAllWords) {
         this.countOfAllWords = countOfAllWords;
+    }
+
+    public Integer getCountOfUniqueWords() {
+        return countOfUniqueWords;
+    }
+
+    public void setCountOfUniqueWords(Integer countOfUniqueWords) {
+        this.countOfUniqueWords = countOfUniqueWords;
     }
 
     /**
