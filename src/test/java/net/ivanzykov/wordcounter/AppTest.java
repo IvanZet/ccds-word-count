@@ -34,7 +34,7 @@ class AppTest {
     }
 
     @Test
-    void main_usersInputFromConsole_countsOneWord() {
+    void main_usersInputFromConsole_countsNineAllAndSevenUniqueWords() {
         // Prepare user's input
         InputStream standardIn = System.in;
         String usersInput = "Humpty-Dumpty sat on a wall. Humpty-Dumpty had a great fall.";
@@ -60,7 +60,7 @@ class AppTest {
     }
 
     @Test
-    void main_usersInputFromFile_countsFourWords() {
+    void main_usersInputFromFile_countsFourAllAndFourUniqueWords() {
         // Run this test
         App.main(new String[]{"mytext.txt"});
 
