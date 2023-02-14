@@ -4,18 +4,14 @@ import net.ivanzykov.wordcounter.wordcount.Actor;
 import net.ivanzykov.wordcounter.wordcount.FieldOfWordCountNullException;
 import net.ivanzykov.wordcounter.wordcount.WordCount;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.regex.Pattern;
+import java.util.*;
 
 public class CounterOfWords implements Actor {
 
     /**
-     * Counts words in users input considering the stop words.
+     * Counts all and unique words in users input considering the stop words.
      *
-     * @param wordCount wordCount object holding name of the file with stop words and for storing the result of this
-     *                  method
+     * @param wordCount wordCount object holding user's input and stop words and for storing the result of this method
      */
     @Override
     public void determineWordCount(WordCount wordCount) {
@@ -33,12 +29,15 @@ public class CounterOfWords implements Actor {
         } catch (NullPointerException e) {
             throw new FieldOfWordCountNullException(errorMessageStart + "Stop words " + errorMessageEnd);
         }
-        List<String> words = new ArrayList<>();
+        List<String> allWords = new ArrayList<>();
+        Set<String> uniqueWords = new HashSet<>();
         for (String word : usersInput.split("[^a-z,A-Z]+")) {
-            if (Pattern.matches("[a-z,A-Z]+", word) && !stopWords.contains(word)) {
-                words.add(word);
+            if (!stopWords.contains(word)) {
+                allWords.add(word);
+                uniqueWords.add(word);
             }
         }
-        wordCount.setCountOfWords(words.size());
+        wordCount.setCountOfAllWords(allWords.size());
+        wordCount.setCountOfUniqueWords(uniqueWords.size());
     }
 }

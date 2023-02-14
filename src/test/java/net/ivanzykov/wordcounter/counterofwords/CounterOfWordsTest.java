@@ -26,27 +26,28 @@ class CounterOfWordsTest {
         counterOfWords = new CounterOfWords();
     }
 
-    private static Stream<Arguments> provide_determineWordCount_setsWordCountInWordCount() {
+    private static Stream<Arguments> provide_determineWordCount_setsCountOfAllAndUniqueWords() {
         return Stream.of(
-                Arguments.of("hello w1rld 3 # the a on off", 3),
-                Arguments.of("Humpty-Dumpty sat on a wall. Humpty-Dumpty had a great fall.", 9)
+                Arguments.of("hello w1rld 3 # the a on off", 3, 3),
+                Arguments.of("Humpty-Dumpty sat on a wall. Humpty-Dumpty had a great fall.", 9, 7)
         );
     }
 
     @ParameterizedTest
-    @MethodSource("provide_determineWordCount_setsWordCountInWordCount")
-    void determineWordCount_setsWordCountInWordCount(String usersInput, Integer expected) {
+    @MethodSource("provide_determineWordCount_setsCountOfAllAndUniqueWords")
+    void determineWordCount_setsCountOfAllAndUniqueWords(String usersInput, Integer expectedAll, Integer expectedUnique) {
         // Prepare args
         wordCount.setStopWords(Arrays.asList("the", "a", "on", "off"));
         wordCount.setUsersInput(usersInput);
 
         // Check blanc state before this test
-        assertNull(wordCount.getCountOfWords());
+        assertNull(wordCount.getCountOfAllWords());
 
         // Run this test
         counterOfWords.determineWordCount(wordCount);
 
-        assertEquals(expected, wordCount.getCountOfWords());
+        assertEquals(expectedAll, wordCount.getCountOfAllWords());
+        assertEquals(expectedUnique, wordCount.getCountOfUniqueWords());
     }
 
     @Test
