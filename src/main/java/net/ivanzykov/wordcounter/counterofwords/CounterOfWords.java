@@ -7,7 +7,6 @@ import net.ivanzykov.wordcounter.wordcount.WordCount;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.regex.Pattern;
 
 public class CounterOfWords implements Actor {
 
@@ -35,7 +34,7 @@ public class CounterOfWords implements Actor {
         }
         List<String> words = new ArrayList<>();
         for (String word : usersInput.split("[^a-z,A-Z]+")) {
-            if (Pattern.matches("[a-z,A-Z]+", word) && !stopWords.contains(word)) {
+            if (!stopWords.contains(word)) {
                 words.add(word);
             }
         }
