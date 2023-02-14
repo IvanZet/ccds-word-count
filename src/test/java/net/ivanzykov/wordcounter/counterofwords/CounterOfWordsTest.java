@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CounterOfAllWordsTest {
+class CounterOfWordsTest {
 
     private WordCount wordCount;
     private Actor counterOfWords;
@@ -23,7 +23,7 @@ class CounterOfAllWordsTest {
     @BeforeEach
     void setUp() {
         wordCount = new WordCount(App.STOP_WORDS_FILENAME, null);
-        counterOfWords = new CounterOfAllWords();
+        counterOfWords = new CounterOfWords();
     }
 
     private static Stream<Arguments> provide_determineWordCount_setsWordCountInWordCount() {
@@ -41,12 +41,12 @@ class CounterOfAllWordsTest {
         wordCount.setUsersInput(usersInput);
 
         // Check blanc state before this test
-        assertNull(wordCount.getCountOfAllWords());
+        assertNull(wordCount.getCountOfWords());
 
         // Run this test
         counterOfWords.determineWordCount(wordCount);
 
-        assertEquals(expected, wordCount.getCountOfAllWords());
+        assertEquals(expected, wordCount.getCountOfWords());
     }
 
     @Test

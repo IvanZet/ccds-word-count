@@ -21,25 +21,16 @@ public class ResultPrinter implements Actor {
     }
 
     /**
-     * Gets count of all and uniques words and prints them to console.
-     *
-     * @param wordCount wordCount object holding count of all words and count of unique words
+     * @param wordCount wordCount object holding name of the file with stop words and for storing the result of this
+     *                  method
      */
     @Override
     public void determineWordCount(WordCount wordCount) {
         printToConsole("Number of words: ");
         try {
-            printToConsole(Objects.requireNonNull(wordCount.getCountOfAllWords()));
+            printToConsole(Objects.requireNonNull(wordCount.getCountOfWords()));
         } catch (NullPointerException e) {
-            throw new FieldOfWordCountNullException("Can't print count of all words. It is null in the WordCount" +
-                    " object");
-        }
-        printToConsole(", unique: ");
-        try {
-            printToConsole(Objects.requireNonNull(wordCount.getCountOfUniqueWords()));
-        } catch (NullPointerException e) {
-            throw new FieldOfWordCountNullException("Can't print count of unique words. It is null in the WordCount" +
-                    " object");
+            throw new FieldOfWordCountNullException("Can't print count of words. It is null in the WordCount object");
         }
     }
 

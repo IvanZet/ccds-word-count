@@ -11,9 +11,8 @@ public class WordCount {
     private List<String> stopWords;
     private final String stopWordsFileName;
     private String usersInput;
+    private Integer countOfWords;
     private final List<Actor> actors;
-    private Integer countOfAllWords;
-    private Integer countOfUniqueWords;
 
     /**
      * Constructor of this class.
@@ -46,20 +45,12 @@ public class WordCount {
         this.usersInput = usersInput;
     }
 
-    public Integer getCountOfAllWords() {
-        return countOfAllWords;
+    public Integer getCountOfWords() {
+        return countOfWords;
     }
 
-    public void setCountOfAllWords(Integer countOfAllWords) {
-        this.countOfAllWords = countOfAllWords;
-    }
-
-    public Integer getCountOfUniqueWords() {
-        return countOfUniqueWords;
-    }
-
-    public void setCountOfUniqueWords(Integer countOfUniqueWords) {
-        this.countOfUniqueWords = countOfUniqueWords;
+    public void setCountOfWords(Integer countOfWords) {
+        this.countOfWords = countOfWords;
     }
 
     /**
@@ -67,7 +58,7 @@ public class WordCount {
      */
     public void count() {
         try {
-            for (Actor actor : actors) {
+            for (Actor actor: actors) {
                 actor.determineWordCount(this);
             }
         } catch (FileReaderException | FieldOfWordCountNullException e) {

@@ -13,8 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ResultPrinterTest {
 
@@ -45,30 +44,18 @@ class ResultPrinterTest {
 
     @Test
     void determineWordCount_printsToConsole() {
-        wordCount.setCountOfAllWords(2);
-        wordCount.setCountOfUniqueWords(1);
+        wordCount.setCountOfWords(1);
 
         resultPrinter.determineWordCount(wordCount);
 
-        assertEquals("Number of words: 2, unique: 1", outputStreamCaptor.toString().trim());
+        assertEquals("Number of words: 1", outputStreamCaptor.toString().trim());
     }
 
     @Test
-    void determineWordCount_nullCountOfAllWords_throwsException() {
+    void determineWordCount_nullCountOfWords_throwsException() {
         Exception exception = assertThrows(FieldOfWordCountNullException.class, () ->
                 resultPrinter.determineWordCount(wordCount));
 
-        assertEquals("Can't print count of all words. It is null in the WordCount object",
-                exception.getMessage());
-    }
-
-    @Test
-    void determineWordCount_nullCountOfUniqueWords_throwsException() {
-        wordCount.setCountOfAllWords(2);
-        Exception exception = assertThrows(FieldOfWordCountNullException.class, () ->
-                resultPrinter.determineWordCount(wordCount));
-
-        assertEquals("Can't print count of unique words. It is null in the WordCount object",
-                exception.getMessage());
+        assertTrue(exception.getMessage().contains("Can't print count of words. It is null in the WordCount object"));
     }
 }
