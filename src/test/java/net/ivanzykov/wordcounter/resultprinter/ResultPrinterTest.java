@@ -44,7 +44,7 @@ class ResultPrinterTest {
 
     @Test
     void determineWordCount_printsToConsole() {
-        wordCount.setCountOfWords(1);
+        wordCount.setCountOfAllWords(1);
 
         resultPrinter.determineWordCount(wordCount);
 
